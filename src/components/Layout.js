@@ -17,9 +17,9 @@ export default class Root extends Component {
   render() {
     return (
       <div className='container'>
-        <FlashCard />
-        {/* <button onClick={this._enableVR} className="btn btn-default">Enable VR</button> */}
         {this.props.children}
+        {/* <FlashCard /> */}
+        {/* <button onClick={this._enableVR} className="btn btn-default">Enable VR</button> */}
       </div>
     )
   }
