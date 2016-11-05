@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import uuid from 'uuid';
 
-import * as QuestionActions from '../actions/QuestionActions';
 import * as DeckActions from '../actions/DeckActions';
 
 @connect(
@@ -11,9 +10,6 @@ import * as DeckActions from '../actions/DeckActions';
   (dispatch) => ({
     addDeck (deck) {
       dispatch(DeckActions.addDeck(deck));
-    },
-    addQuestion (question) {
-      dispatch(QuestionActions.addQuestion(question));
     }
   })
 )
@@ -32,7 +28,7 @@ export default class CreateDeck extends Component {
   _onSubmit(e) {
     e.preventDefault();
     let { count } = this.state;
-    let { deckName } = this.refs;
+    let { deckName, deckDescription } = this.refs;
     let {Question1, Answer1A, Answer1B, Answer1C, Answer1D } = this.refs;
     let question1 = {
       question: Question1.value,
@@ -86,6 +82,7 @@ export default class CreateDeck extends Component {
     let deck = {
       id: uuid(),
       name: deckName.value,
+      description: deckDescription,
       questions
     }
 
@@ -143,6 +140,8 @@ export default class CreateDeck extends Component {
             <label>Deck Name</label>
             <input type="text" className="form-control" ref="deckName" id="deckName" placeholder="Enter Deck Name"/>
             <small className="form-text text-muted"></small>
+            <label>Description</label>
+            <input type="text" className="form-control" ref="deckDescription" placeholder="Enter Deck Name"/>
           </div>
           <div className="form-group">
             <label>Question Name</label>

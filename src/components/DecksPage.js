@@ -1,23 +1,20 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { browserHistory } from 'react-router';
 import uuid from 'uuid';
 
-import * as QuestionActions from '../actions/QuestionActions';
 import * as DeckActions from '../actions/DeckActions';
 
 @connect(
   (state) => ({
+    deck: state.deck,
+    decks: state.decks
   }),
   (dispatch) => ({
-    addDeck (deck) {
-      dispatch(DeckActions.addDeck(deck));
-    },
-    addQuestion (question) {
-      dispatch(QuestionActions.addQuestion(question));
-    }
+
   })
 )
-export default class CreateDeck extends Component {
+export default class DecksPage extends Component {
   constructor() {
     super();
 
@@ -26,10 +23,26 @@ export default class CreateDeck extends Component {
 
   }
   render() {
+    const { decks } = this.props;
+
+    let Decks = '';
+    if (decks) {
+      Decks = decks.map((d) => {
+        return (
+          <div key={d.id} className="deck" onClick={() => browserHistory.push(`/deck/${d.id}`)}>
+            <h3>{d.name}</h3>
+            <h4>{d.description}</h4>
+          </div>
+        );
+      });
+    }
 
     return (
       <div className='container'>
-        <h1>Decks</h1>
+        <div className="row">
+          <h1>Decks</h1>
+          {Decks}
+        </div>
       </div>
     )
   }
