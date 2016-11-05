@@ -4,27 +4,18 @@ import { connect } from 'react-redux';
 import { correct, wrong } from '../actions/ScoreActions'
 
 @connect(state => ({
-  score:state.score
+  score:state.score,
+  card:state.card
 }),
 dispatch => ({
   correct: correct
 })
 )
 export default class FlashCard extends Component {
-  constructor() {
-    super();
-    this.state = {
-      card:{
-        question:"Who is the next President of USA?",
-        answers:["Monkey","Panda","Clinton","Trump"],
-        correct:1
-    }
-  }
-}
 
   render() {
-    const { card } = this.state;
-    const { score, dispatch } = this.props;
+    const { score, dispatch, card } = this.props;
+    console.log("card",card);
     const { question,answers,correct } = card;
     let MultipleChoices = answers.map( (answer,i) => {
       if(i === correct){
