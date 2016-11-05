@@ -1,4 +1,6 @@
-export default function score(state = 0, action) {
+import initialState from './initialState'
+
+export default function score(state = initialState.card, action) {
   switch (action.type) {
     case 'CORRECT':
     return state + 1;
