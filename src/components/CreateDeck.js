@@ -32,31 +32,21 @@ export default class CreateDeck extends Component {
     e.preventDefault();
     let { deckName, Question1, Answer1A, Answer1B, Answer1C, Answer1D, Question2, Answer2A, Answer2B, Answer2C, Answer2D } = this.refs;
     let question1 = {
+      answers: [Answer1A.value, Answer1B.value, Answer1C.value, Answer1D.value],
       id: uuid(),
       question: Question1.value,
-      answers: {
-        a: Answer1A.value,
-        b: Answer1B.value,
-        c: Answer1C.value,
-        d: Answer1D.value
-      },
-      correct: 'a'
+      correct: 0
     }
     let question2 = {
+      answers: [Answer2B.value, Answer2A.value, Answer2C.value, Answer2D.value],
       id: uuid(),
-      question: Question1.value,
-      answers: {
-        a: Answer2B.value,
-        b: Answer2A.value,
-        c: Answer2C.value,
-        d: Answer2D.value
-      },
-      correct: 'b'
+      question: Question2.value,
+      correct: 1
     }
     let deck = {
       id: uuid(),
       name: deckName.value,
-      questions: [question1.id, question2.id]
+      questions: [question1, question2]
     }
 
     // this.props.addQuestion(question1);
@@ -79,25 +69,25 @@ export default class CreateDeck extends Component {
             <label>Question Name</label>
             <input type="text" className="form-control" ref={`Question${1}`} id="questionName" placeholder="Enter a Question"/>
             <label>Correct Answer</label>
-            <textarea className="form-control" ref={`Answer${1}A`} rows="2"></textarea>
+            <input className="form-control" ref={`Answer${1}A`} rows="2"></input>
             <label>Incorrect Answer 1</label>
-            <textarea className="form-control" ref={`Answer${1}B`} rows="2"></textarea>
+            <input className="form-control" ref={`Answer${1}B`} rows="2"></input>
             <label>Incorrect Answer 2</label>
-            <textarea className="form-control" ref={`Answer${1}C`} rows="2"></textarea>
+            <input className="form-control" ref={`Answer${1}C`} rows="2"></input>
             <label>Incorrect Answer 3</label>
-            <textarea className="form-control" ref={`Answer${1}D`} rows="2"></textarea>
+            <input className="form-control" ref={`Answer${1}D`} rows="2"></input>
           </div>
           <div className="form-group">
             <label>Question Name</label>
             <input type="text" className="form-control" ref={`Question${2}`} id="questionName" placeholder="Enter a Question"/>
             <label>Answer 1</label>
-            <textarea className="form-control" ref={`Answer${2}A`} rows="2"></textarea>
+            <input className="form-control" ref={`Answer${2}A`} rows="2"></input>
             <label>Answer 2</label>
-            <textarea className="form-control" ref={`Answer${2}B`} rows="2"></textarea>
+            <input className="form-control" ref={`Answer${2}B`} rows="2"></input>
             <label>Answer 3</label>
-            <textarea className="form-control" ref={`Answer${2}C`} rows="2"></textarea>
+            <input className="form-control" ref={`Answer${2}C`} rows="2"></input>
             <label>Answer 4</label>
-            <textarea className="form-control" ref={`Answer${2}D`} rows="2"></textarea>
+            <input className="form-control" ref={`Answer${2}D`} rows="2"></input>
           </div>
           <button type="submit" className="btn btn-primary">Submit</button>
         </form>

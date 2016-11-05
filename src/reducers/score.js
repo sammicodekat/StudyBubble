@@ -3,9 +3,9 @@ import initialState from './initialState'
 export default function score(state = initialState.score, action) {
   switch (action.type) {
     case 'CORRECT':
-      return state + 1;
+      return state + action.payload;
     case "WRONG":
-      return state - 1;
+      return state;
     default:
       return state;
   }

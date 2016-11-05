@@ -1,11 +1,6 @@
-export function correct() {
+export function correct(score) {
   return {
-    type: 'CORRECT'
-  }
-}
-
-export function wrong() {
-  return {
-    type: 'WRONG'
+    type: 'CORRECT',
+    payload: score
   }
 }
