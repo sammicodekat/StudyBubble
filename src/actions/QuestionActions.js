@@ -6,3 +6,9 @@ export function addQuestion (question) {
     payload: question
   };
 }
+
+export function getQuestion() {
+  return {
+    type: 'QUESTION_GET'
+  };
+}
