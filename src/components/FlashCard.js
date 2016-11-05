@@ -22,10 +22,18 @@ export default class FlashCard extends Component {
     this.state = {
       wrongCount: 0
     }
+    this._checkWrong= this._checkWrong.bind(this);
   }
 
   _checkWrong(){
+  const { wrongCount } = this.state;
+  if(wrongCount === 3){
 
+  }else{
+    this.setState({
+      wrongCount:wrongCount+1
+    })
+  }
   }
 
   render() {
