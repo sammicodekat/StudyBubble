@@ -17,10 +17,10 @@ import FlashCard from './components/FlashCard';
 render(
   <Provider store={store}>
     <Router history={browserHistory}>
+      <Route path='/vr' component={VRScene} />
       <Route path='/' component={Layout}>
         <IndexRoute component={CreateDeck} />
         <Route path='/add' component={CreateDeck} />
-        <Route path='/vr' component={VRScene} />
         <Route path='/flashcard' component={FlashCard} />
       </Route>
     </Router>
