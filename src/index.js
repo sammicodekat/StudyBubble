@@ -12,6 +12,7 @@ import store from './store';
 import Layout from './components/Layout';
 import CreateDeck from './components/CreateDeck';
 import VRScene from './components/VRScene';
+import FlashCard from './components/FlashCard';
 
 render(
   <Provider store={store}>
@@ -19,7 +20,8 @@ render(
       <Route path='/' component={Layout}>
         <IndexRoute component={CreateDeck} />
         <Route path='/add' component={CreateDeck} />
-        <Route path='/VR' component={VRScene} />
+        <Route path='/vr' component={VRScene} />
+        <Route path='/flashcard' component={FlashCard} />
       </Route>
     </Router>
   </Provider>,
