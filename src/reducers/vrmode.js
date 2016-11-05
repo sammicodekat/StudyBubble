@@ -1,4 +1,4 @@
-export default function vrmode(state = true, action) {
+export default function vrmode(state = false, action) {
   console.log('action:', action);
   switch (action.type) {
     case 'ENABLE_VRMODE':

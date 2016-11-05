@@ -6,6 +6,7 @@ export default props => {
     <Entity
     text={{text: `score: ${props.score}`}}
     material={{color: 'darkgray'}}
-    position={[0, 0.6, -3]}/>
+    position={[3, 0.2, -5]}
+    rotation={[0, -30, 0]}/>
   )
 };

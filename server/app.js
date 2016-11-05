@@ -23,3 +23,7 @@ require('./config/socketio')(app, io);
 require('./config/webpack')(app);
 
 app.use('/api', require('./routes/api'));
+app.get('*', (req, res, next) => {
+  let indexPath = path.join(__dirname, '../public/index.html');
+  res.sendFile(indexPath);
+});

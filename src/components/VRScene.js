@@ -17,11 +17,13 @@ export default class VRScene extends Component {
           <a-cursor />
         </Entity>
 
-        {/* <Entity light={{type: 'spot'}} position={[0, 0, -3]} /> */}
+        {/* <Entity light={{type: 'spot'}} position={[0, 2, -1]} /> */}
 
-        <Floor />
-          <Score score={5}/>
-        
+        <Floor src="url(./images/floor.jpeg)">
+
+        </Floor>
+        <Score score={5}/>
+
         {/* <Sky /> */}
       </Scene>
     )
