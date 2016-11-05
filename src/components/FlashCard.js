@@ -8,14 +8,24 @@ import { correct, wrong } from '../actions/ScoreActions'
   card:state.card
 }),
 dispatch => ({
-  correct: correct
+
 })
 )
 export default class FlashCard extends Component {
+  constructor() {
+    super();
+    this.state = {
+      wrongCount: 0
+    }
+  }
+
+  _checkWrong(){
+
+  }
 
   render() {
     const { score, dispatch, card } = this.props;
-    console.log("card",card);
+    const { wrongCount } = this.state;
     const { question,answers,correct } = card;
     let MultipleChoices = answers.map( (answer,i) => {
       if(i === correct){
