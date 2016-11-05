@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as VRActions from '../actions/VRActions';
+import FlashCard from './FlashCard'
 
 @connect()
 export default class Root extends Component {
@@ -17,7 +18,7 @@ export default class Root extends Component {
   render() {
     return (
       <div className='container'>
-        <h1 className='text-center'>A-Frame, React, Redux, Socket.io Template</h1>
+        <FlashCard />
         <button onClick={this._enableVR} className="btn btn-default">Enable VR</button>
       </div>
     )
