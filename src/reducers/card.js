@@ -1,11 +1,10 @@
 import initialState from './initialState'
+ftyff
 
-export default function score(state = initialState.card, action) {
+export default function card(state = initialState.card, action) {
   switch (action.type) {
     case 'CORRECT':
-      return state + 1;
-    case "WRONG":
-      return state - 1;
+      return state
     default:
       return state;
   }
