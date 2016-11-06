@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Entity, Scene } from 'aframe-react';
 import { connect } from 'react-redux';
 import Sky from './Sky'
+import ExitButton from './ExitButton'
 import Score from './Score'
 import Floor from './Floor'
 
@@ -95,11 +96,12 @@ export default class VRScene extends Component {
         <VrAnswers answers={answers} correct={correct} _correctAnswer={this._correctAnswer} _wrongAnswer={this._wrongAnswer}/>
 
         <Entity className="sun"
-        geometry={{primitive: 'sphere', radius: 3}}
-        material={{shader: 'flat', color: 'orange'}}
-        position={[-30, 70, 10]}/>
+          geometry={{primitive: 'sphere', radius: 3}}
+          material={{shader: 'flat', color: 'orange'}}
+          position={[-30, 70, 10]}/>
 
         <Sky />
+        <ExitButton/>
       </Scene>
     )
   }
