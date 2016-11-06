@@ -62,3 +62,35 @@
   min-height: 50px;
   margin: 30px;
 }
+
+.bodySection {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  margin-top: 40px;
+}
+
+.bodySection img {
+  width: 100%;
+  object-fit: contain;
+}
+
+.theText {
+  align-self: flex-start;
+  border-top: 1px solid #77CCCF;
+  padding-top: 30px;
+}
+
+.theText h1 {
+  color: #77CCCF;
+}
+
+.screenshot {
+  margin-top: 40px;
+  padding-top: 50px;
+  border-top: 1px solid #77CCCF;
+}
+
+.logo {
+  align-self: flex-start;
+}
