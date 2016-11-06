@@ -7,8 +7,8 @@ const VrQuestion = (props) => {
   let z = -100;
   let r = 0;
   if(count%2){
-  z=100;
-  r = 180
+  z=4;
+  r = 180;
 }
   return (
     <Entity
@@ -19,7 +19,7 @@ const VrQuestion = (props) => {
       animation__pos={{property: 'position',
         easing: 'easeOutSine',
         dur: 3000,
-      to: '0, 1, -4'}}>
+      to: `0, 1, -4`}}>
 
       <Entity
         text={{ text: text, size: 0.25 }}
