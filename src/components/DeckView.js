@@ -10,7 +10,7 @@ import { browserHistory } from 'react-router';
 
   })
 )
-export default class DecksView extends Component {
+export default class DeckView extends Component {
   constructor() {
     super();
 
@@ -18,8 +18,8 @@ export default class DecksView extends Component {
   render() {
     const { deck } = this.props;
 
-    let Questions = deck.questions.map(q => (
-      <div>
+    let Questions = deck.questions.map((q, i) => (
+      <div key={i}>
         <h3>{q.question}</h3>
       </div>
     ))

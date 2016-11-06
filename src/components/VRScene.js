@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Entity, Scene } from 'aframe-react';
+import { Entity, Scene, Assets } from 'aframe-react';
 import { connect } from 'react-redux';
 import Sky from './Sky'
 import Score from './Score'
@@ -76,6 +76,8 @@ export default class VRScene extends Component {
     return (
 
       <Scene fog={{type: 'exponential', density: 0.01, color: '#f4fcff'}}>
+        <Entity sound="src: url(./noise-only.mp3); autoplay: true; volume:1">
+        </Entity>
         <Entity camera='userHeight: 1.6' look-controls>
           <a-cursor />
         </Entity>
