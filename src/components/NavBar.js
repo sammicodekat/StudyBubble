@@ -11,17 +11,19 @@ export default class NavBar extends Component {
 
   render() {
     return (
-      <AppBar
-        title="StudyBubble"
-        className="AppBar"
-        showMenuIconButton={false}
-      >
-        <Tabs>
-          <Tab className="Tab" label="Home" onClick={() => browserHistory.push('/')} />
-          <Tab className="Tab" label="Decks" onClick={() => browserHistory.push('/decks')} />
-          <Tab className="Tab" label="Add" onClick={() => browserHistory.push('/add')} />
-        </Tabs>
-      </AppBar>
+      <div>
+        <AppBar
+          title={<span id='appBarIcon'><img src="./favicon.png"/> Study Bubble</span>}
+          className="AppBar"
+          showMenuIconButton={false}
+        >
+          <Tabs>
+            <Tab className="Tab" label="Home" onClick={() => browserHistory.push('/')} />
+            <Tab className="Tab" label="Decks" onClick={() => browserHistory.push('/decks')} />
+            <Tab className="Tab" label="Add" onClick={() => browserHistory.push('/add')} />
+          </Tabs>
+        </AppBar>
+      </div>
     )
   }
 }
