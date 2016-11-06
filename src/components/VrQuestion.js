@@ -24,7 +24,7 @@ const VrQuestion = (props) => {
 
       <Entity
         text={{ text: 'turn around to choose your answer' }}
-        material={{ color: 'green' }}
+        material={{ color: '#99a7aa' }}
         position={[-(text.length / 5.7), 3, -3]}
         rotation={[20, 0, 0]}
         visible="true">
