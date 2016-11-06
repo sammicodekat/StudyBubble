@@ -4,11 +4,11 @@ import Cloud from './Cloud'
 
 export default props => (
   <Entity
-    geometry={{primitive: 'sphere', radius: 100}}
-    material={{shader: 'flat', color: '#effbff'}}
-    scale="1 1 -2">
+    geometry={{primitive: 'box', width: 10, height: 6, depth: 14}}
+    material={{shader: 'flat', color: '#fff'}}
+    position={[10, 50, 0]}>
 
-    <Cloud />
+
 
   </Entity>
 );
