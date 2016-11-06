@@ -2,14 +2,20 @@ import React, { Component } from 'react';
 import { Entity } from 'aframe-react';
 
 const VrQuestion = (props) => {
-  const { question } = props;
+  const { question, count } = props;
   const { text } = question;
+  let z = -100;
+  let r = 0;
+  if(count%2){
+  z=100;
+  r = 180
+}
   return (
     <Entity
       geometry={{ primitive: 'box', width: 5, height: 1, depth: 0.1}}
       material={{ color: '#99a7aa' }}
-      position={[0, 1, -100]}
-      rotation={[-20, 0, 0]}
+      position={[0, 1, z]}
+      rotation={[-20, r, 0]}
       animation__pos={{property: 'position',
         easing: 'easeOutSine',
         dur: 3000,
@@ -39,9 +45,8 @@ const VrQuestion = (props) => {
           attribute="visible"
           fill="forwards"
           from="true"
-          to="false" /> */}
+        to="false" /> */}
       </Entity>
-
     </Entity>
   )
 }

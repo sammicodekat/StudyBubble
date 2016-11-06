@@ -78,8 +78,8 @@ export default class VRScene extends Component {
     let card = deck.questions[count];
     const { question, answers, correct } = card;
 
-    let vrQuestion = (<VrQuestion question={question} />);
-    let vrAnswers = (<VrAnswers answers={answers} correct={correct} _correctAnswer={this._correctAnswer} _wrongAnswer={this._wrongAnswer}/>);
+    let vrQuestion = (<VrQuestion question={question} count={count}/>);
+    let vrAnswers = (<VrAnswers answers={answers} correct={correct} _correctAnswer={this._correctAnswer} _wrongAnswer={this._wrongAnswer} count={count}/>);
 
     if (endGame) {
       vrQuestion = (<EndGameF restartDeck={this.restartDeck} score={score} />);

@@ -2,9 +2,15 @@ import React, { Component } from 'react';
 import { Entity } from 'aframe-react';
 
 const VrAnswers = (props) => {
-  const { answers, correct, _correctAnswer, _wrongAnswer, wrongCount } = props;
+  const { answers, correct, _correctAnswer, _wrongAnswer, wrongCount,count } = props;
   let a = 3;
   let b = 1;
+  let z = 15;
+  let r = 180;
+  if(count%2){
+  z=-15;
+  r = 0
+}
 
   const MultipleChoices = answers.map((answer, i) => {
     if (i === 1) {
@@ -19,10 +25,10 @@ const VrAnswers = (props) => {
     if (i === correct) {
       return (
         <Entity key={i}
-        geometry={{ primitive: 'box', width: 5, height: 2, depth: 0.1 }}
-        position={[a, b, 15]}
-        material={{ color: '#99a7aa' }}
-        rotation="0 180 0"
+          geometry={{ primitive: 'box', width: 5, height: 2, depth: 0.1 }}
+          position={[a, b, z]}
+          material={{ color: '#99a7aa' }}
+          rotation={[0, r, 0]}
         animation__correct={{property: 'material.color',
                           startEvents: 'click',
                                easing: 'easeInSine',
@@ -43,7 +49,7 @@ const VrAnswers = (props) => {
         </Entity>
       ); } else {
       return (
-        <Entity key={i} geometry={{ primitive: 'box', width: 5, height: 2 }} position={[a, b, 15]} material={{ color: '#99a7aa' }} rotation="0 180 0">
+        <Entity key={i} geometry={{ primitive: 'box', width: 5, height: 2 }} position={[a, b, z]} material={{ color: '#99a7aa' }} rotation={[0, r, 0]}>
           <a-animation begin="click" easing="linear" attribute="material.color"
             from="#99a7aa" to="red" dur="500"
           />
