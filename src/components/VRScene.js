@@ -77,7 +77,15 @@ export default class VRScene extends Component {
 
       <Scene fog={{type: 'exponential', density: 0.01, color: '#f4fcff'}}>
         <Entity camera='userHeight: 1.6' look-controls>
-          <a-cursor />
+          <a-cursor cursor={{ fuse: 'true', fuseTimeout: '2000' }}>
+
+            <a-animation begin="click" easing="ease-in" attribute="scale"
+              fill="forwards" from="7 7 7" to="1 1 1" dur="1000"
+            />
+            <a-animation begin="click" easing="ease-in" attribute="scale"
+              fill="forwards" from="0.01 0.01 0.01" to="7 7 7" dur="500"
+            />
+          </a-cursor>
         </Entity>
 
         <Floor src="url(./images/floor.jpeg)"/>
