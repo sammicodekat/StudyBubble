@@ -32,7 +32,7 @@ const VrQuestion = (props) => {
 
       <Entity
         bmfont-text={{ text: 'Are you ready?', color: 'white' }}
-        position={[-0.7, 0, 4]} >
+        position={[-0.7, 0, 4]}>
         {/* <a-animation
           delay="2000"
           easing="ease-in"

@@ -23,14 +23,17 @@ const VrAnswers = (props) => {
         position={[a, b, 15]}
         material={{ color: '#99a7aa' }}
         rotation="0 180 0"
-        animation_correct={{property: 'material.color',
-                           begin: 'click',
-                          easing: 'easeInSine',
-                              to: 'green',
-                             dur: 500}}>
-          <a-animation begin="click" easing="ease-in" attribute="material.color"
-            from="green" to="gray" dur="1500"
-          />
+        animation__correct={{property: 'material.color',
+                          startEvents: 'click',
+                               easing: 'easeInSine',
+                                   to: '#75fedd',
+                                  dur: 500}}>
+        {/* animation__reset={{property: 'material.color',
+                        startEvents: 'animation__correct-complete',
+                             easing: 'easeInSine',
+                                 to: '#99a7aa',
+                              delay: 2000,
+                                dur: 500}}> */}
           <Entity text={{ text: answer }} material={{ color: 'orange' }} position={[-1.8, 0, 0.5]} visible="false">
             <a-animation begin="3500" easing="ease-in" attribute="visible"
               fill="forwards" from="false" to="true"
@@ -40,12 +43,12 @@ const VrAnswers = (props) => {
         </Entity>
       ); } else {
       return (
-        <Entity key={i} geometry={{ primitive: 'box', width: 5, height: 2 }} position={[a, b, 15]} material={{ color: 'gray' }} rotation="0 180 0">
+        <Entity key={i} geometry={{ primitive: 'box', width: 5, height: 2 }} position={[a, b, 15]} material={{ color: '#99a7aa' }} rotation="0 180 0">
           <a-animation begin="click" easing="linear" attribute="material.color"
-            from="gray" to="red" dur="500"
+            from="#99a7aa" to="red" dur="500"
           />
           <a-animation begin="click" easing="ease-in" attribute="material.color"
-            from="red" to="gray" dur="1500"
+            from="red" to="#99a7aa" dur="1500"
           />
           <Entity text={{ text: answer }} material={{ color: 'orange' }} position={[-1.8, 0, 0.5]} visible="false">
             <a-animation begin="3500" easing="ease-in" attribute="visible"
