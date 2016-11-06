@@ -18,10 +18,16 @@ const VrAnswers = (props) => {
     }
     if (i === correct) {
       return (
-        <Entity key={i} geometry={{ primitive: 'box', width: 5, height: 2 }} position={[a, b, 15]} material={{ color: 'gray' }} rotation="0 180 0">
-          <a-animation begin="click" easing="linear" attribute="material.color"
-            from="gray" to="green" dur="500"
-          />
+        <Entity key={i}
+        geometry={{ primitive: 'box', width: 5, height: 2, depth: 0.1 }}
+        position={[a, b, 15]}
+        material={{ color: '#99a7aa' }}
+        rotation="0 180 0"
+        animation_correct={{property: 'material.color',
+                           begin: 'click',
+                          easing: 'easeInSine',
+                              to: 'green',
+                             dur: 500}}>
           <a-animation begin="click" easing="ease-in" attribute="material.color"
             from="green" to="gray" dur="1500"
           />
