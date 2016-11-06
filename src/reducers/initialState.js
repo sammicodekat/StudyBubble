@@ -26,5 +26,5 @@ export default {
       }
     ]
   },
-    decks: []
+  decks: []
   }
