@@ -15,7 +15,7 @@ const store = createStore(reducer, loadState(), composeWithDevTools(
 ));
 
 store.subscribe(() => {
-  saveState(store.getState());
+  store.getState();
 });
 
 socket.on('action', action => {
