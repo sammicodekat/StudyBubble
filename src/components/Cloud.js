@@ -10,8 +10,5 @@ export default props => (
                           dur: props.duration,
                            to: '0, 1, 100',
                          loop: true}}>
-
-
-
   </Entity>
 );
