@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { browserHistory } from 'react-router';
 import uuid from 'uuid';
+import {Card, CardActions, CardHeader, CardText} from 'material-ui/Card';
+import FlatButton from 'material-ui/FlatButton';
+
 
 import * as DeckActions from '../actions/DeckActions';
 
@@ -31,12 +34,36 @@ export default class DecksPage extends Component {
     if (decks) {
       Decks = decks.map((d) => {
         return (
-          <div key={d.id} className="deck" onClick={() => {
-            setCurrentDeck(d);
-            browserHistory.push(`/deck/${d.id}`)
-          }}>
-            <h3>{d.name}</h3>
-            <h4>{d.description}</h4>
+          // <div key={d.id} className="deck" onClick={() => {
+          //   setCurrentDeck(d);
+          //   browserHistory.push(`/deck/${d.id}`)
+          // }}>
+          //   <h3>{d.name}</h3>
+          //   <h4>{d.description}</h4>
+          // </div>
+          <div key={d.id} className='col-xs-12 col-md-3'>
+            <Card>
+              <CardHeader
+                title={d.name}
+                subtitle={d.description}
+                // subtitle={d.description}
+                // actAsExpander={true}
+                // showExpandableButton={true}
+                className='card'
+              />
+              <CardActions>
+                <FlatButton label="Enter this Bubble" onClick={() => {
+                  setCurrentDeck(d);
+                  browserHistory.push(`/vr`)
+                }}/>
+                <FlatButton label="More Info" onClick={() => {
+                  setCurrentDeck(d);
+                  browserHistory.push(`/deck/${d.id}`)
+                }}/>
+              </CardActions>
+              <CardText expandable={true}>
+              </CardText>
+            </Card>
           </div>
         );
       });
@@ -45,7 +72,7 @@ export default class DecksPage extends Component {
     return (
       <div className='container'>
         <div className="row">
-          <h1>Decks</h1>
+          <h1 className='text-center'>Decks</h1>
           {Decks}
         </div>
       </div>

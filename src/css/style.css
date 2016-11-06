@@ -1,3 +1,64 @@
 .deck {
   border: 1px solid #000;
 }
+
+.home {
+  background-image: url('http://i2.cdn.turner.com/cnnnext/dam/assets/141125161220-city-golf-steenberg-cpt-horizontal-large-gallery.jpg');
+  background-size: cover;
+  height: 700px;
+  margin-top: -50px;
+}
+
+#mainTitle {
+  margin-top: 250px;
+  color: white;
+  font-family: helvetica;
+  font-size: 60px;
+}
+
+.addInput {
+  width: 100% !important;
+}
+
+.AppBar {
+  background-color: #212121 !important;
+}
+
+.AppBar h1 {
+  color: #fff !important;
+}
+
+.AppBar div {
+  background-color: #212121 !important;
+  margin-right: 20px;
+  margin-top: 2px;
+  color: #fff;
+}
+
+.Tab div {
+  color: #fff;
+}
+
+.loginFrame {
+  margin-top: 100px;
+}
+
+.editorFrame {
+  border: 1px solid #000;
+}
+
+.sampleText {
+  background-color: #FAFAFA;
+  width: 100%;
+  padding: 10px;
+  font-size: 15px;
+}
+
+.userAuthPaper {
+  padding: 20px;
+}
+
+.card {
+  min-height: 50px;
+  margin: 30px;
+}

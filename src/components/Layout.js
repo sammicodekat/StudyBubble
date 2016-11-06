@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import FlashCard from './FlashCard'
+import FlashCard from './FlashCard';
+import NavBar from './NavBar';
 
 @connect()
 export default class Root extends Component {
@@ -10,7 +11,8 @@ export default class Root extends Component {
 
   render() {
     return (
-      <div className='container'>
+      <div>
+        <NavBar />
         {this.props.children}
       </div>
     )

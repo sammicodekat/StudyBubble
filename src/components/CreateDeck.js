@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import uuid from 'uuid';
+import { TextField } from 'material-ui';
 
 import * as DeckActions from '../actions/DeckActions';
 
@@ -145,6 +146,13 @@ export default class CreateDeck extends Component {
           </div>
           <div className="form-group">
             <label>Question Name</label>
+            {/* <TextField
+              hintText="Enter a Question"
+              multiLine={true}
+              rows={2}
+              rowsMax={4}
+              ref={`Question${1}`}
+            /> */}
             <input type="text" className="form-control" ref={`Question${1}`} id="questionName" placeholder="Enter a Question"/>
             <label>Correct Answer</label>
             <input className="form-control" ref={`Answer${1}A`} rows="2"></input>

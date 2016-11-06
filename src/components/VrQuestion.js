@@ -3,34 +3,45 @@ import { Entity } from 'aframe-react';
 
 const VrQuestion = (props) => {
   const { question } = props;
-  const { text1,text2,text3 } = question;
+  const { text } = question;
   return (
-    <Entity geometry={{ primitive: 'box', width: 5, height: 4 }} position={[0, 1, -15]} material={{ color: 'red' }}>
-      <Entity text={{ text: text1 }} material={{ color: 'orange' }} position={[-1.8, 1, 0.5]} visible="false">
-        <a-animation begin="3500" easing="ease-in" attribute="visible"
-          fill="forwards" from="false" to="true"
-          />
+    <Entity
+      geometry={{ primitive: 'box', width: 5, height: 1, depth: 0.1}}
+      material={{ color: '#99a7aa' }}
+      position={[0, 1, -100]}
+      rotation={[-20, 0, 0]}
+      animation__pos={{property: 'position',
+                         easing: 'easeOutSine',
+                            dur: 3000,
+                             to: '0, 1, -4'}}>
+
+      <Entity
+        text={{ text: question, size: 0.25 }}
+        material={{ color: 'orange' }}
+        position={[-(question.length / 13), -0.2, 0.5]}
+        visible="true">
       </Entity>
-      <Entity text={{ text: text2 }} material={{ color: 'orange' }} position={[-1.8, 0, 0.5]} visible="false">
-        <a-animation begin="3500" easing="ease-in" attribute="visible"
-          fill="forwards" from="false" to="true"
-          />
+
+      <Entity
+        text={{ text: 'turn around to choose your answer' }}
+        material={{ color: 'green' }}
+        position={[-(question.length / 5.7), 3, -3]}
+        rotation={[20, 0, 0]}
+        visible="true">
       </Entity>
-      <Entity text={{ text: text3 }} material={{ color: 'orange' }} position={[-1.8, -1, 0.5]} visible="false">
-        <a-animation begin="3500" easing="ease-in" attribute="visible"
-          fill="forwards" from="false" to="true"
-          />
+
+      <Entity
+        bmfont-text={{ text: 'Are you ready?', color: 'white' }}
+        position={[-0.7, 0, 4]} >
+        {/* <a-animation
+          delay="2000"
+          easing="ease-in"
+          attribute="visible"
+          fill="forwards"
+          from="true"
+          to="false" /> */}
       </Entity>
-      <Entity text={{ text: 'turn around to choose your answer' }} material={{ color: 'green' }} position={[-5, 2.5, 1]} visible="false">
-        <a-animation begin="5500" easing="ease-in" attribute="visible"
-          fill="forwards" from="false" to="true"
-          />
-      </Entity>
-      <Entity bmfont-text={{ text: 'Are you ready?', color: 'white' }} position={[-0.7, 0, 4]} >
-        <a-animation begin="2000" easing="ease-in" attribute="visible"
-          fill="forwards" from="true" to="false"
-          />
-      </Entity>
+
     </Entity>
   )
 }
