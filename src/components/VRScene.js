@@ -4,9 +4,13 @@ import { connect } from 'react-redux';
 import Sky from './Sky'
 import Score from './Score'
 import Floor from './Floor'
+
 import VrQuestion from './VrQuestion'
 import VrAnswers from './VrAnswers'
 import { correct, wrong } from '../actions/ScoreActions'
+
+import Room from './Room'
+
 
 @connect(state => ({
   score: state.score,
@@ -70,20 +74,24 @@ export default class VRScene extends Component {
     const { question, answers, correct } = card;
 
     return (
-      <Scene>
-        <Entity camera="userHeight: 1.6" look-controls>
+
+      <Scene fog={{type: 'exponential', density: 0.01, color: '#f4fcff'}}>
+        <Entity camera='userHeight: 1.6' look-controls>
           <a-cursor />
         </Entity>
 
-        {/* <Entity light={{type: 'spot'}} position={[0, 2, -1]} /> */}
-
-        <Floor src="url(./images/floor.jpeg)" />
-        <Score score={score} />
+        <Floor src="url(./images/floor.jpeg)"/>
+        <Score score={score}/>
 
         <VrQuestion question={question}  />
         <VrAnswers answers={answers} correct={correct} _correctAnswer={this._correctAnswer} _wrongAnswer={this._wrongAnswer}/>
 
-        {/* <Sky /> */}
+        <Entity className="sun"
+        geometry={{primitive: 'sphere', radius: 3}}
+        material={{shader: 'flat', color: 'orange'}}
+        position={[-30, 70, 10]}/>
+
+        <Sky />
       </Scene>
     )
   }
