@@ -8,7 +8,7 @@ export default {
         "id":"f5cca7c6-663c-4cb5-a087-c4adc9eb4f4e",
         "answers":["London","Manchester","Edinburgh","York"],
         "question":{
-          text: "What is the capital of the UK?",
+          text: "What is the capitol of the UK?",
         },
         "correct":0
       },
@@ -18,23 +18,23 @@ export default {
         "question":{
           text: "What is the longest river in the world?"
         },
-        "correct":1
+        "correct":0
       },
       {
         "id":"ff712db0-c2c5-4bb3-b051-96a08ab5e284",
-        "answers":["Julius","Nero","Augustus","Panda"],
+        "answers":["Augustus","Julius","Nero","Panda"],
         "question":{
           text: "Who was the first emperor of Rome?"
         },
-        "correct":2
+        "correct":0
       },
       {
         "id":"ff712db0-c2c5-4bb3-b051-96a08ab5e285",
-        "answers":["196","206","216","1226"],
+        "answers":["206","196","216","1226"],
         "question":{
           text: "How many bones are in the human body?"
         },
-        "correct":1
+        "correct":0
       }
     ]
   },
