@@ -25,13 +25,13 @@ render(
   <MuiThemeProvider>
     <Provider store={store}>
       <Router history={browserHistory}>
-        <Route path='/vr' component={VRScene} />
-        <Route path='/' component={Layout}>
+        <Route path="/vr" component={VRScene} />
+        <Route path="/" component={Layout}>
           <IndexRoute component={HomePage} />
-          <Route path='/decks' component={DecksPage} />
-          <Route path='/deck/:id' component={DeckView} />
-          <Route path='/add' component={CreateDeck} />
-          <Route path='/flashcard' component={FlashCard} />
+          <Route path="/decks" component={DecksPage} />
+          <Route path="/deck/:id" component={DeckView} />
+          <Route path="/add" component={CreateDeck} />
+          <Route path="/flashcard" component={FlashCard} />
         </Route>
       </Router>
     </Provider>

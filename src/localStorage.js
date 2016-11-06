@@ -1,6 +1,6 @@
 export function loadState() {
   try {
-    let serializedState = localStorage.getItem('state');
+    const serializedState = localStorage.getItem('state');
     if (!serializedState) throw new Error();
     return JSON.parse(serializedState);
   } catch (err) {

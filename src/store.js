@@ -18,7 +18,7 @@ store.subscribe(() => {
   store.getState();
 });
 
-socket.on('action', action => {
+socket.on('action', (action) => {
   store.dispatch(action);
 });
 

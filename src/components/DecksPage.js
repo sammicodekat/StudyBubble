@@ -1,22 +1,22 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { browserHistory } from 'react-router';
-import uuid from 'uuid';
-import {Card, CardActions, CardHeader, CardText} from 'material-ui/Card';
+// import uuid from 'uuid';
+import { Card, CardActions, CardHeader, CardText } from 'material-ui/Card';
 import FlatButton from 'material-ui/FlatButton';
 
 
 import * as DeckActions from '../actions/DeckActions';
 
 @connect(
-  (state) => ({
+  state => ({
     deck: state.deck,
-    decks: state.decks
+    decks: state.decks,
   }),
-  (dispatch) => ({
+  dispatch => ({
     setCurrentDeck(deck) {
       dispatch(DeckActions.setCurrentDeck(deck))
-    }
+    },
   })
 )
 export default class DecksPage extends Component {
@@ -25,7 +25,6 @@ export default class DecksPage extends Component {
 
     this.state = {
     }
-
   }
   render() {
     const { decks, setCurrentDeck } = this.props;
@@ -49,33 +48,39 @@ export default class DecksPage extends Component {
                 // subtitle={d.description}
                 // actAsExpander={true}
                 // showExpandableButton={true}
-                className='card'
-              />
+                className="card"
+                />
               <CardActions>
-                <FlatButton label="Enter this Bubble" onClick={() => {
-                  setCurrentDeck(d);
-                  browserHistory.push(`/vr`)
-                }}/>
-                <FlatButton label="More Info" onClick={() => {
-                  setCurrentDeck(d);
-                  browserHistory.push(`/deck/${d.id}`)
-                }}/>
+                <FlatButton
+                  label="Enter this Bubble" onClick={() => {
+                    setCurrentDeck(d);
+                    browserHistory.push('/vr')
+                  }}
+                />
+                <FlatButton
+                  label="More Info"
+                  onClick={() => {
+                    setCurrentDeck(d);
+                    browserHistory.push(`/deck/${d.id}`)
+                  }}
+                />
               </CardActions>
-              <CardText expandable={true}>
-              </CardText>
+                <CardText
+                  expandable={true}>
+                </CardText>
             </Card>
           </div>
-        );
+            );
       });
     }
 
-    return (
-      <div className='container'>
-        <div className="row">
-          <h1 className='text-center'>Decks</h1>
-          {Decks}
-        </div>
-      </div>
-    )
+        return (
+          <div className="container">
+            <div className="row">
+              <h1 className="text-center">Decks</h1>
+              {Decks}
+            </div>
+          </div>
+        )
   }
 }

@@ -1,9 +1,9 @@
-module.exports = function(app, io) {
-  io.on('connection', function(socket) {
+module.exports = function (app, io) {
+  io.on('connection', function (socket) {
     console.log('socket connected');
 
     /*
-  
+
     // EXAMPLE ACTION EMIT
 
     setInterval(() => {
@@ -12,9 +12,9 @@ module.exports = function(app, io) {
         payload: 'MORE TEST'
       })
     }, 1000)
-  
+
     */
-    
+
     socket.on('disconnect', () => {
       console.log('disconnected');
     });
@@ -24,5 +24,4 @@ module.exports = function(app, io) {
     req.io = io;
     next();
   });
-}
-
+};
