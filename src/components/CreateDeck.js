@@ -32,7 +32,7 @@ export default class CreateDeck extends Component {
     let { deckName, deckDescription } = this.refs;
     let {Question1, Answer1A, Answer1B, Answer1C, Answer1D } = this.refs;
     let question1 = {
-      question: Question1.value,
+      question: { text: Question1.value },
       answers: [Answer1B.value, Answer1A.value, Answer1C.value, Answer1D.value],
       correct: 1
     }
@@ -40,7 +40,7 @@ export default class CreateDeck extends Component {
     if (count >= 2) {
       let {Question2, Answer2A, Answer2B, Answer2C, Answer2D } = this.refs;
       question2 = {
-        question: Question2.value,
+        question: { text: Question2.value },
         answers: [Answer2B.value, Answer2D.value, Answer2A.value, Answer2C.value],
         correct: 2
       }
@@ -48,7 +48,7 @@ export default class CreateDeck extends Component {
     if (count >= 3) {
       let {Question3, Answer3A, Answer3B, Answer3C, Answer3D } = this.refs;
       question3 = {
-        question: Question3.value,
+        question: { text: Question3.value },
         answers: [Answer3B.value, Answer3A.value, Answer3C.value, Answer3D.value],
         correct: 1
       }
@@ -56,7 +56,7 @@ export default class CreateDeck extends Component {
     if (count >= 4) {
       let {Question4, Answer4A, Answer4B, Answer4C, Answer4D } = this.refs;
       question4 = {
-        question: Question4.value,
+        question: { text: Question4.value },
         answers: [Answer4B.value, Answer4C.value, Answer4D.value, Answer4A.value],
         correct: 3
       }
@@ -64,7 +64,7 @@ export default class CreateDeck extends Component {
     if (count >= 5) {
       let {Question5, Answer5A, Answer5B, Answer5C, Answer5D } = this.refs;
       question5 = {
-        question: Question5.value,
+        question: { text: Question5.value },
         answers: [Answer5A.value, Answer5D.value, Answer5C.value, Answer5B.value],
         correct: 0
       }
