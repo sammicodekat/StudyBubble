@@ -6,10 +6,12 @@ const VrQuestion = (props) => {
   const { text } = question;
   let z = -100;
   let r = 0;
+  let a = -4;
   if(count%2){
-  z=4;
-  r = 180;
-}
+    z=4;
+    r = 180;
+    a=4
+  }
   return (
     <Entity
       geometry={{ primitive: 'box', width: 5, height: 1, depth: 0.1}}
@@ -19,36 +21,36 @@ const VrQuestion = (props) => {
       animation__pos={{property: 'position',
         easing: 'easeOutSine',
         dur: 3000,
-      to: `0, 1, -4`}}>
+      to: `0, 1, ${a}`}}>
 
-      <Entity
-        text={{ text: text, size: 0.25 }}
-        material={{ color: 'orange' }}
-        position={[-(text.length / 13), -0.2, 0.5]}
-        visible="true">
-      </Entity>
+        <Entity
+          text={{ text: text, size: 0.25 }}
+          material={{ color: 'orange' }}
+          position={[-(text.length / 13), -0.2, 0.5]}
+          visible="true">
+        </Entity>
 
-      <Entity
-        text={{ text: 'turn around to choose your answer' }}
-        material={{ color: 'green' }}
-        position={[-(text.length / 5.7), 3, -3]}
-        rotation={[20, 0, 0]}
-        visible="true">
-      </Entity>
+        <Entity
+          text={{ text: 'turn around to choose your answer' }}
+          material={{ color: 'green' }}
+          position={[-(text.length / 5.7), 3, -3]}
+          rotation={[20, 0, 0]}
+          visible="true">
+        </Entity>
 
-      <Entity
-        bmfont-text={{ text: 'Are you ready?', color: 'white' }}
-        position={[-0.7, 0, 4]}>
-        {/* <a-animation
-          delay="2000"
-          easing="ease-in"
-          attribute="visible"
-          fill="forwards"
-          from="true"
-        to="false" /> */}
-      </Entity>
-    </Entity>
-  )
-}
+        <Entity
+          bmfont-text={{ text: 'Are you ready?', color: 'white' }}
+          position={[-0.7, 0, 4]}>
+          {/* <a-animation
+            delay="2000"
+            easing="ease-in"
+            attribute="visible"
+            fill="forwards"
+            from="true"
+            to="false" /> */}
+          </Entity>
+        </Entity>
+      )
+    }
 
-export default VrQuestion;
+    export default VrQuestion;
