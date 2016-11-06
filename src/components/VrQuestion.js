@@ -7,10 +7,10 @@ const VrQuestion = (props) => {
   let z = -100;
   let r = 0;
   let a = -4;
-  if(count%2){
-    z=4;
+  if(count % 2){
+    z = 4;
     r = 180;
-    a=4
+    a = 4
   }
   return (
     <Entity
@@ -30,13 +30,13 @@ const VrQuestion = (props) => {
           visible="true">
         </Entity>
 
-        <Entity
-          text={{ text: 'turn around to choose your answer' }}
-          material={{ color: 'green' }}
-          position={[-(text.length / 5.7), 3, -3]}
-          rotation={[20, 0, 0]}
-          visible="true">
-        </Entity>
+      {count === 0 ? <Entity
+        text={{ text: 'turn around to choose your answer' }}
+        material={{ color: '#99a7aa' }}
+        position={[-(text.length / 5.8), 3, -3]}
+        rotation={[20, 0, 0]}
+        visible="true">
+      </Entity> : null}
 
         <Entity
           bmfont-text={{ text: 'Are you ready?', color: 'white' }}
