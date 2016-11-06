@@ -8,9 +8,7 @@ export default {
         "id":"f5cca7c6-663c-4cb5-a087-c4adc9eb4f4e",
         "answers":["London","Manchester","Edinburgh","York"],
         "question":{
-          text1:"What is the ",
-          text2:"capital of ",
-          text3:'the UK?'
+          text:"What is the capital of the UK?",
         },
         "correct":0
       },

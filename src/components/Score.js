@@ -6,8 +6,11 @@ export default props => {
     <Entity
       text={{text: `score: ${props.score}`}}
       material={{color: '#31b0d5'}}
-      position={[3, 0.2, -5]}
+      position={props.position}
       bevelEnabled={true}
-      rotation={[0, -30, 0]}/>
+      bevelSize={8}
+      bevelThickness={12}
+      curveSegments={12}
+      rotation={props.rotation}/>
   )
 };

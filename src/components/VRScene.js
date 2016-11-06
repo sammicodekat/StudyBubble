@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
-import { Entity, Scene} from 'aframe-react';
+import { Entity, Scene } from 'aframe-react';
+import 'aframe-animation-component';
 import { connect } from 'react-redux';
 import Sky from './Sky'
+import ExitButton from './ExitButton'
 import Score from './Score'
 import Floor from './Floor'
 
+import Messages from './Messages'
 import VrQuestion from './VrQuestion'
 import VrAnswers from './VrAnswers'
 import EndGameF from './EndGameF'
@@ -83,22 +86,33 @@ export default class VRScene extends Component {
       vrAnswers = (<EndGameB restartDeck={this.restartDeck} score={score} />);
     }
     return (
+      <Scene fog={{type: 'exponential', density: 0.01, color: 'white'}}>
 
-      <Scene fog={{type: 'exponential', density: 0.01, color: '#f4fcff'}}>
-        <Entity camera='userHeight: 1.6' look-controls >
-          <a-cursor />
+        <Entity sound="src: url(./music.mp3); autoplay: true; volume:1"></Entity>
+
+        <Entity camera='userHeight: 1.6' look-controls>
+          <a-cursor cursor={{ fuse: 'true', fuseTimeout: '2000' }}>
+
+            <a-animation begin="click" easing="ease-in" attribute="scale"
+              fill="forwards" from="7 7 7" to="1 1 1" dur="1000"
+            />
+            <a-animation begin="click" easing="ease-in" attribute="scale"
+              fill="forwards" from="0.01 0.01 0.01" to="7 7 7" dur="500"
+            />
+          </a-cursor>
         </Entity>
-
-        <Floor src="url(./images/floor.jpeg)"/>
-        <Score score={score}/>
+        <Floor />
+        <Score score={score} position={[7, 1, 0]} rotation={[0, -90, 0]} />
+        <Score score={score} position={[-7, 1, 0]} rotation={[0, 90, 0]} />
+        {/* <Messages /> */}
         {vrQuestion}
         {vrAnswers}
         <Entity className="sun"
           geometry={{primitive: 'sphere', radius: 3}}
           material={{shader: 'flat', color: 'orange'}}
-          position={[-30, 70, 10]} />
-
+          position={[-30, 70, 50]}/>
         <Sky />
+        <ExitButton/>
       </Scene>
     )
   }
