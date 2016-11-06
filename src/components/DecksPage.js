@@ -41,7 +41,7 @@ export default class DecksPage extends Component {
           //   <h3>{d.name}</h3>
           //   <h4>{d.description}</h4>
           // </div>
-          <div key={d.id} className='col-xs-12 col-md-3'>
+          <div key={d.id}>
             <Card>
               <CardHeader
                 title={d.name}
