@@ -11,7 +11,9 @@ import * as DeckActions from '../actions/DeckActions';
     decks: state.decks
   }),
   (dispatch) => ({
-
+    setCurrentDeck(deck) {
+      dispatch(DeckActions.setCurrentDeck(deck))
+    }
   })
 )
 export default class DecksPage extends Component {
@@ -23,13 +25,16 @@ export default class DecksPage extends Component {
 
   }
   render() {
-    const { decks } = this.props;
+    const { decks, setCurrentDeck } = this.props;
 
     let Decks = '';
     if (decks) {
       Decks = decks.map((d) => {
         return (
-          <div key={d.id} className="deck" onClick={() => browserHistory.push(`/deck/${d.id}`)}>
+          <div key={d.id} className="deck" onClick={() => {
+            setCurrentDeck(d);
+            browserHistory.push(`/deck/${d.id}`)
+          }}>
             <h3>{d.name}</h3>
             <h4>{d.description}</h4>
           </div>

@@ -82,7 +82,7 @@ export default class CreateDeck extends Component {
     let deck = {
       id: uuid(),
       name: deckName.value,
-      description: deckDescription,
+      description: deckDescription.value,
       questions
     }
 
