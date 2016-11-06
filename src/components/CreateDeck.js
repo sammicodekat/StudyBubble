@@ -214,7 +214,7 @@ export default class CreateDeck extends Component {
           <button type='button' className="btn btn-primary" onClick={this.incrementQuestionCount}>Add Another Question</button>
           <br/>
           <br/>
-          <button type="submit" className="btn btn-primary">Submit</button>
+          <button type="submit" className="btn btn-primary">Create Deck</button>
         </form>
       </div>
     )
