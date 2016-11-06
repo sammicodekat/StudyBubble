@@ -56,7 +56,6 @@ export default class FlashCard extends Component {
   }
 
   render() {
-    console.log('this.state.count:', this.state.count);
     const { score, deck } = this.props;
     const { wrongCount, count, endGame } = this.state;
     if (endGame) {
