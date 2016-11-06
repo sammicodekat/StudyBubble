@@ -9,12 +9,12 @@ const VrQuestion = (props) => {
       <Entity text={{ text: text1 }} material={{ color: 'orange' }} position={[-1.8, 1, 0.5]} visible="false">
         <a-animation begin="3500" easing="ease-in" attribute="visible"
           fill="forwards" from="false" to="true"
-          />
+        />
       </Entity>
       <Entity text={{ text: text2 }} material={{ color: 'orange' }} position={[-1.8, 0, 0.5]} visible="false">
         <a-animation begin="3500" easing="ease-in" attribute="visible"
           fill="forwards" from="false" to="true"
-          />
+        />
       </Entity>
       <Entity text={{ text: text3 }} material={{ color: 'orange' }} position={[-1.8, -1, 0.5]} visible="false">
         <a-animation begin="3500" easing="ease-in" attribute="visible"
