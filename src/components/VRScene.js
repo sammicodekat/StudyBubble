@@ -79,6 +79,9 @@ export default class VRScene extends Component {
     return (
 
       <Scene fog={{type: 'exponential', density: 0.01, color: 'white'}}>
+
+        <Entity sound="src: url(./music.mp3); autoplay: true; volume:1"></Entity>
+
         <Entity camera='userHeight: 1.6' look-controls>
           <a-cursor cursor={{ fuse: 'true', fuseTimeout: '2000' }}>
 
